@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Service from '../../API/Servise';
 import classes from './MostLikedImages.module.css'
 import ImageCard from '../../UI/ImageCard/ImageCard';
 

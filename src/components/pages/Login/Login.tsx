@@ -2,7 +2,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, child, get } from "firebase/database";
 import classes from './Login.module.css'
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -22,7 +21,7 @@ const Login = () => {
       firebase.initializeApp(firebaseConfig);
     
       const [loggined, setLoggined] = useState(false);
-      const [user, setUser] = useState<any | null>(null);(null);
+      // const [user, setUser] = useState<any | null>(null);(null);
       const [inputEmail, setInputEmail] = useState('');
       const [inputPassword, setInputPassword] = useState('');
       const [errorMessages, setErrorMessages] = useState('');
@@ -30,10 +29,10 @@ const Login = () => {
     
     
       useEffect(() => {
-        firebase.auth().onAuthStateChanged((user) => {
-          console.log(user);
-        //   user ? setLoggined(true) : '';
-          user ? setUser(user) : null; // Здесь используем null, так как user может быть null
+        firebase.auth().onAuthStateChanged(() => {
+        //   console.log(user);
+        // //   user ? setLoggined(true) : '';
+        //   user ? setUser(user) : null; // Здесь используем null, так как user может быть null
         });
       }, []);
     
@@ -44,7 +43,7 @@ const Login = () => {
       const signInGoogle = () =>{
         const authProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(authProvider)
-          .then((userCredential) => {
+          .then(() => {
             setLoggined(true);
           })
           .catch((error) => {
@@ -62,7 +61,7 @@ const Login = () => {
             // Signed in 
             const user = userCredential.user;
             if(user){
-              setUser(user);
+              // setUser(user);
               setLoggined(true);
             }
           })

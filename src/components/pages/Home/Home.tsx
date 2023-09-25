@@ -8,7 +8,6 @@ import 'firebase/compat/auth';
 import { useEffect, useState } from 'react';
 
 const Home = () => {
-    const [loggined, setLoggined] = useState(false);
     const [user, setUser] = useState<any | null>(null);(null);
     const navigate = useNavigate();
 
@@ -26,22 +25,11 @@ const Home = () => {
 
     useEffect(()=>{
         firebase.auth().onAuthStateChanged((user) =>{
-            user ? setLoggined(true): '';
             user ? setUser(user): '';
             console.log(user);
             
         })
     },[user])
-
-    const changeTheme = ()=>{
-        var root = document.documentElement;
-
-        if (root.getAttribute('data-color-scheme') === 'dark') {
-          root.setAttribute('data-color-scheme', 'light');
-        } else {
-          root.setAttribute('data-color-scheme', 'dark');
-        }
-    }
 
     const loginNavigate = () =>{
         navigate('/login')
