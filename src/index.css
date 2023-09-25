@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'e-Ukraine';
+    src: url('./assets/fonts/e-Ukraine-Regular.otf') format('opentype');
+}
+
+:root{
+    --background_dark: #151515;
+    --font_dark: #E2E2E2;
+    --backround_light: #E2E2E2;
+    --font_light: #151515;
+    background-color: var(--background_dark);
+    font-family: 'e-Ukraine', sans-serif;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+:root[data-color-scheme="dark"] {
+    fill: var(--font_dark);
+    color: var(--font_dark);
+    background-color: var(--background_dark);
+}
+:root[data-color-scheme="light"] {
+    fill: var(--font_light);
+    color: var(--font_light);
+    background-color: var(--backround_light);
+}
+
+:root[data-color-scheme="dark"] a {
+    fill: var(--font_dark);
+    color: var(--font_dark);
+}
+:root[data-color-scheme="light"] a {
+    fill: var(--font_light);
+    color: var(--font_light);
+}
+
+:root[data-color-scheme="dark"] .text_one {
+    fill: var(--font_dark);
+    color: var(--font_dark);
+}
+:root[data-color-scheme="light"] .text_one {
+    fill: var(--font_light);
+    color: var(--font_light);
+}
+
+body{
+    margin: 0;
+}
+

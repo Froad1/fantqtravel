@@ -1,0 +1,19 @@
+.menu_container{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+    .menu{
+        display: flex;
+        height: 100%;
+        width: 70%;
+        background-color: #282828;
+        padding: 0.7rem 1.5rem;
+        border-radius: 16px;
+        justify-content: space-around;
+        align-items: center;
+    }

@@ -1,0 +1,97 @@
+.home_container{
+    padding: 3rem 2rem;
+}
+    .header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+        .all_photo_button{
+            display: flex;
+            border-radius: 6.5px;
+            padding: 0.5rem;
+            background-color: #282828;
+            align-items: center;
+            justify-content: center;
+        }
+            .all_photo_icon{
+
+            }
+
+        .account_button{
+            display: flex;
+            border-radius: 6.5px;
+            padding: 0.5rem;
+            background-color: #282828;
+            align-items: center;
+            justify-content: center;
+        }
+            .account_icon{
+
+            }
+            .user{
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+            }
+
+    .about_site{
+        width: 75%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+        .text_one{
+            color: #E2E2E2;
+            font-family: e-Ukraine;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160.922%; /* 25.747px */
+        }
+        .text_two{
+            color: #D2FA73;
+            font-family: e-Ukraine;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160.922%;
+        }
+    .search_container{
+        gap: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+    }
+        .search_input{
+            width: 100%;
+            background-color: #282828;
+            color: #E2E2E2;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            display: flex;
+            padding: 12px 18px 12px 37px;
+            align-items: center;
+            gap: 10px;
+            border-radius: 19px;
+        }
+        .search_icon{
+            position: absolute;
+            top: 0.7rem;
+            left: 0.7rem;
+        }
+            .search_icon svg{
+                width: 18px;
+                height: 18px;
+            }
+        .filter{
+            display: flex;
+            border-radius: 50%;
+            padding: 0.5rem;
+            background-color: #282828;
+            align-items: center;
+            justify-content: center;
+        }

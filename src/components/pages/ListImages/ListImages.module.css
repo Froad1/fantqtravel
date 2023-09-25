@@ -1,0 +1,52 @@
+.listImages_page_container{
+    padding: 6rem 2rem;
+}
+
+    .images_container{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 16px;
+    }
+
+    .back_icon{
+        position: fixed;
+        z-index: 1;
+        top: 2rem;
+        left: 1.5rem;
+        height: 30px;
+        width: 30px;
+    }
+
+    .scroll_up_button{
+        display: flex;
+        padding: 1rem;
+        bottom: -50vh;
+        right: 3rem;
+        position: fixed;
+        border-radius: 50%;
+        background-color: #282828;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease-in-out;
+    }
+    .pages{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        display: flex;
+        gap: 1rem;
+    }
+        .page_buttons{
+            padding: 0.5rem 0.8rem;
+            background-color: #282828;
+            border-radius: 7px;
+        }
+
+.loading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
