@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router';
 import classes from './Likes.module.css'
 import ImageCard from '../../UI/ImageCard/ImageCard';
 import ReactLoading from 'react-loading';
+import axios from 'axios';
 
 interface Image {
     id: string;
@@ -56,16 +57,23 @@ const Likes = () => {
         const firestore = firebase.firestore();
         var db = firestore.collection('images').doc('userLikes').collection(user.uid);
         db.get()
-        .then((e)=>{
-            const data = e.docs.map(doc => {
+        .then(async(e)=>{
+            const promise = e.docs.map(async (doc) => {                
+                const response = await axios.get(`https://www.googleapis.com/drive/v3/files/${doc.id}`, {
+                    params: {
+                      key: 'AIzaSyAE6LFdYnhSIHffI7_tw7pi1aIf2WK7sEE',
+                      fields: 'id ,webContentLink, imageMediaMetadata, thumbnailLink, parents, imageMediaMetadata',
+                    },
+                });
                 return {
-                    id: doc.id,
                     folder: doc.data().folder,
-                    thumbnailLink: doc.data().thumbnailLink,
-                };
+                    id: response.data.id,
+                    thumbnailLink: response.data.thumbnailLink.replace("s220", "s800"),
+                }
             });
+            const data = await Promise.all(promise);
+
             console.log(data);
-            
             setImageArray(data);
             setLoading(false);
         })
