@@ -42,6 +42,26 @@
                     height: 1.5rem;
                 }
 
+.button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #151515;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: #E2E2E2;
+}
+.button:hover {
+  border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 :root[data-color-scheme="dark"] .signInGoogle svg {
     fill: white;
 }
@@ -60,4 +80,11 @@
 }
 :root[data-color-scheme="light"] .register_box form input{
     background-color: #d0d0d0;
+}
+
+:root[data-color-scheme="dark"] .button{
+    background-color: #151515;
+}
+:root[data-color-scheme="light"] .button{
+    background-color: #b3b3b3;
 }
