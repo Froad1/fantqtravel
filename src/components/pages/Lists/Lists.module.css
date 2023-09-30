@@ -56,4 +56,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}                
+}          
+
+:root[data-color-scheme="dark"] .list{
+    background-color: #282828;
+}
+:root[data-color-scheme="light"] .list{
+    background-color: #b3b3b3;
+}

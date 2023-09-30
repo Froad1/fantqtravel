@@ -1,4 +1,6 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {useTranslation } from 'react-i18next';
+
+import { useLocation, useNavigate} from "react-router-dom";
 import classes from './ImageDetail.module.css';
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
@@ -15,8 +17,7 @@ interface ImageData {
       isoSpeed: number;
     };
     thumbnailLink: string;
-  }
-
+}
 const ImageDetail = () => {
     const [user, setUser] = useState<any | null>(null);(null);
     const [id, setId] = useState('');
@@ -27,6 +28,8 @@ const ImageDetail = () => {
     const [liked, setLiked] = useState(false);
     const [countLikes, setCountLikes] = useState<number>(0);
     const [loading, setLoading] = useState(true);
+    const [seeBigImage, setSeeBigImage] = useState(false);
+    const {t} = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -93,7 +96,7 @@ const ImageDetail = () => {
             setCity(folderName)
           }
           else setCity('Відень');
-          console.log(folderName);
+        //   console.log(folderName);
           
         } else {
           console.error('Помилка отримання назви папки');
@@ -104,23 +107,24 @@ const ImageDetail = () => {
     const elementRef = useRef<HTMLDivElement | null>(null);
 
     const followCursor = (e: React.TouchEvent) => {
-
-        if (elementRef.current && e.targetTouches[0].clientY >= window.innerHeight - (window.innerHeight * 0.47) && e.targetTouches[0].clientY <= window.innerHeight - (window.innerHeight * 0.15)) {            
-            elementRef.current.style.top = e.targetTouches[0].clientY + 'px';
+        if (elementRef.current) {
+          const { clientY } = e.targetTouches[0];
+          const minHeight = window.innerHeight * 0.47;
+          const maxHeight = window.innerHeight - window.innerHeight * 0.15;
+      
+          elementRef.current.style.top = `${Math.max(minHeight, Math.min(maxHeight, clientY))}px`;
         }
-        else if(elementRef.current &&e.targetTouches[0].clientY < window.innerHeight - (window.innerHeight * 0.47) && parseFloat(elementRef.current.style.top) != parseFloat((window.innerHeight - (window.innerHeight * 0.47)).toFixed(2))){
-            elementRef.current.style.top = window.innerHeight - (window.innerHeight * 0.47)+ 'px';
-            console.log(parseFloat(elementRef.current.style.top), window.innerHeight - (window.innerHeight * 0.47) );
-            
-        }
+      };
 
+    const followCursorStart = (e: React.TouchEvent) => {
+    if (elementRef.current) {
+        const { clientY } = e.targetTouches[0];
+        const minHeight = window.innerHeight * 0.47;
+        const maxHeight = window.innerHeight - window.innerHeight * 0.41;
+
+        elementRef.current.style.top = `${Math.max(minHeight, Math.min(maxHeight, clientY))}px`;
     }
-
-    const followCursorStart = (e: React.TouchEvent) =>{        
-        if(elementRef.current && e.targetTouches[0].clientY > window.innerHeight - (window.innerHeight * 0.47) && e.targetTouches[0].clientY < window.innerHeight - (window.innerHeight * 0.41)){
-            elementRef.current.style.top = e.targetTouches[0].clientY + 'px';
-        }
-    }
+    };
 
     const getImageData = async() =>{
 
@@ -130,7 +134,7 @@ const ImageDetail = () => {
               fields: 'id ,webContentLink, imageMediaMetadata, thumbnailLink, parents, imageMediaMetadata',
             },
         });
-        console.log(response);
+        // console.log(response);
         setImageData(response.data);
         
         function gcd(a: number, b: number): number {
@@ -237,11 +241,19 @@ const ImageDetail = () => {
             })
         }
         else navigate('/login')
-    }
-        
+    }   
 
     return (
         <div className={classes.image_detail_container}>
+            {seeBigImage && (
+                <div className={classes.big_image_container}>
+                    <div className={classes.overflow} onClick={()=>{setSeeBigImage(!seeBigImage)}}></div>
+                    <svg className={classes.big_image_icon_close} onClick={()=>{setSeeBigImage(!seeBigImage)}} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                    <img className={classes.big_image} src={`https://drive.google.com/uc?id=${id}&export=download`} alt="" />
+                </div>
+            )
+
+            }
             <svg onClick={back} className={classes.back_icon} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
             <div className={classes.image_container}>
                 {loading ?(
@@ -249,7 +261,7 @@ const ImageDetail = () => {
                         <ReactLoading type='bubbles' color='#E2E2E2' width='30%'/>
                     </div>
                 ):(    
-                    <img className={classes.image} src={`https://drive.google.com/uc?id=${id}&export=download`} alt="" />
+                    <img onClick={()=>{setSeeBigImage(!seeBigImage)}} className={classes.image} src={`https://drive.google.com/uc?id=${id}&export=download`} alt="" />
                 )}
             </div>
             <div ref={elementRef} className={classes.image_detail} onTouchStart={followCursorStart} onTouchMove={followCursor}>
@@ -277,11 +289,11 @@ const ImageDetail = () => {
                 </div>
                 <div className={classes.description}>
                     <div className={classes.exposure}>
-                        <p>Витримка:</p>
+                        <p>{t('exposure')}</p>
                         <p>{exposure}</p>
                     </div>
                     <div className={classes.aperture}>
-                        <p>Діафрагма:</p>
+                        <p>{t('aperture')}</p>
                         <p>{imageData?.imageMediaMetadata.aperture}</p>
                     </div>
                     <div className={classes.iso}>
@@ -292,7 +304,7 @@ const ImageDetail = () => {
                 <a href={`https://drive.google.com/uc?id=${id}&export=download`} target="_blank">
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/></svg>
-                        Завантажити
+                        {t('download')}
                     </button>
                 </a>
             </div>

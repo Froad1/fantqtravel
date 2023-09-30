@@ -14,9 +14,6 @@
             align-items: center;
             justify-content: center;
         }
-            .all_photo_icon{
-
-            }
 
         .account_button{
             display: flex;
@@ -26,9 +23,6 @@
             align-items: center;
             justify-content: center;
         }
-            .account_icon{
-
-            }
             .user{
                 border-radius: 50%;
                 width: 24px;
@@ -41,7 +35,6 @@
         margin-bottom: 3rem;
     }
         .text_one{
-            color: #E2E2E2;
             font-family: e-Ukraine;
             font-size: 16px;
             font-style: normal;
@@ -95,3 +88,24 @@
             align-items: center;
             justify-content: center;
         }
+
+:root[data-color-scheme="dark"] .text_two {
+    color: #D2FA73;
+}
+:root[data-color-scheme="light"] .text_two {
+    color: #7a9d26;
+}
+
+:root[data-color-scheme="dark"] .account_button{
+    background-color: #282828;
+}
+:root[data-color-scheme="light"] .account_button{
+    background-color: #b3b3b3;
+}
+
+:root[data-color-scheme="dark"] .all_photo_button{
+    background-color: #282828;
+}
+:root[data-color-scheme="light"] .all_photo_button{
+    background-color: #b3b3b3;
+}

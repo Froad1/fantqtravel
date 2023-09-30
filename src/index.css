@@ -47,6 +47,17 @@
     color: var(--font_light);
 }
 
+:root[data-color-scheme="dark"] button {
+    background-color: #282828;
+    color: #e2e2e2;
+    fill: #e2e2e2;
+}
+:root[data-color-scheme="light"] button{
+    background-color: #b3b3b3;
+    color: #151515;
+    fill: #151515;
+}
+
 body{
     margin: 0;
 }

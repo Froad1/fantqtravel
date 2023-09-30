@@ -1,3 +1,6 @@
+import '../../../assets/locales/config';
+import {useTranslation } from 'react-i18next';
+
 import { useEffect, useState } from 'react';
 import Service from '../../API/Servise';
 import classes from './AllImages.module.css'
@@ -16,6 +19,7 @@ interface Image{
 }
 
 const AllImages = () => {
+  const {t} = useTranslation();
     const [imageArray, setImageArray] = useState<any[]>([]);
     const [showUp, setShowUp] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -92,7 +96,7 @@ const AllImages = () => {
 
     return (
         <div className={classes.all_photo_container}>
-            <p>Всі фотографії:</p>
+            <p>{t('allphotos')}</p>
             {loading ? (
               <div className={classes.loading}>
                 <ReactLoading type='bubbles' color='#E2E2E2' width='30%'/>

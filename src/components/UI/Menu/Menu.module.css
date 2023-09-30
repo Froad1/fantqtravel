@@ -17,3 +17,33 @@
         justify-content: space-around;
         align-items: center;
     }
+        .menu_icon{
+            fill: #a4a4a4;
+            transition: all 0.3s ease-in-out;
+        }
+
+.selected{
+    fill: #E2E2E2;
+    transition: all 0.3s ease-in-out;
+}
+
+:root[data-color-scheme="dark"] .menu {
+    background-color: #282828;
+}
+:root[data-color-scheme="light"] .menu {
+    background-color: #b3b3b3;
+}
+
+:root[data-color-scheme="dark"] .menu_icon {
+    fill: #a4a4a4;
+}
+:root[data-color-scheme="light"] .menu_icon {
+    fill: #626262;
+}
+
+:root[data-color-scheme="dark"] .selected {
+    fill: #E2E2E2;
+}
+:root[data-color-scheme="light"] .selected {
+    fill: #151515;
+}

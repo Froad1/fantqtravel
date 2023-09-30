@@ -1,3 +1,14 @@
 .setting_page_container{
     padding: 3rem 2rem;
 }
+    .settings{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        text-decoration: none;
+    }
+        .settings svg{
+            fill: #848484;
+        }

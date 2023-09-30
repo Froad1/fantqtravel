@@ -1,0 +1,31 @@
+{
+    "in_this_site": "Tato stránka obsahuje všechny fotografie z našich",
+    "trips": "cest",
+    "most_liked": "Nejoblíbenější:",
+    "exposure": "Expozice:",
+    "aperture": "Clona:",
+    "download": "Stáhnout",
+    "allphotos": "Všechny fotografie:",
+    "settings":{
+        "theme": "Téma",
+        "language": "Jazyk",
+        "account": "Účet"
+    },
+    "login":{
+        "password": "Heslo",
+        "sign_in": "Přihlásit se",
+        "or_sign_with": "- Nebo se přihlaste pomocí -",
+        "dont_have_account": "Nemáte účet.",
+        "sign_up": "Zaregistrujte se!"
+    },
+    "register":{
+        "password": "Heslo",
+        "sign_up": "Zaregistrovat se",
+        "or_sign_with": "- Nebo se zaregistrujte pomocí -",
+        "have_account": "Máte účet. ",
+        "sign_in": "Přihlaste se!"
+    },
+    "account":{
+        "signout": "Odhlásit se"
+    }
+}

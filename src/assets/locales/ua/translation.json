@@ -1,0 +1,31 @@
+{
+    "in_this_site": "На цьому сайті зібрані всі фото з наших",
+    "trips": "поїздок",
+    "most_liked": "Найбільш уподобані:",
+    "exposure": "Витримка:",
+    "aperture": "Діафрагма:",
+    "download": "Завантажити",
+    "allphotos": "Всі фотографії:",
+    "settings":{
+        "theme": "Тема",
+        "language": "Мова",
+        "account": "Акаунт"
+    },
+    "login":{
+        "password": "Пароль",
+        "sign_in": "Увійти",
+        "or_sign_with": "- Або увійти через -",
+        "dont_have_account": "Не маєш аккаунт.",
+        "sign_up": "Зареєструватися!"
+    },
+    "register":{
+        "password": "Пароль",
+        "sign_up": "Зареєструватися",
+        "or_sign_with": "- Або зареєструватися через -",
+        "have_account": "Маєте аккаунт. ",
+        "sign_in": "Увійти!"
+    },
+    "account":{
+        "signout": "Вийти з аккаунта"
+    }
+}

@@ -1,0 +1,16 @@
+.account_page_container{
+    padding: 3rem 2rem;
+}
+
+    .back_icon{
+        position: fixed;
+        z-index: 1;
+        top: 2rem;
+        left: 1.5rem;
+        height: 30px;
+        width: 30px;
+    }
+    .settings_container{
+        margin-top: 4rem;
+
+    }

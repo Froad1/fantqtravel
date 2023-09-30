@@ -1,14 +1,14 @@
 
-    .login_container{
+    .register_container{
         width: 100%;
         height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-        .login_box{
-            max-width: 50%;
-            padding: 3rem 3rem;
+        .register_box{
+            width: 70%;
+            padding: 4rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -16,14 +16,14 @@
             background: #282828;
             border-radius: 1.5rem;
         }
-            .login_box form{
+            .register_box form{
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 gap: 1rem;
             }
-                .login_box form input{
+                .register_box form input{
                     padding: 0.7rem 1rem;
                     border-radius: 1rem;
                     outline: none;
@@ -42,26 +42,6 @@
                     height: 1.5rem;
                 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #151515;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    color: #E2E2E2;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 :root[data-color-scheme="dark"] .signInGoogle svg {
     fill: white;
 }
@@ -69,15 +49,15 @@ button:focus-visible {
     fill: #242424;
 }
 
-:root[data-color-scheme="dark"] .login_box{
+:root[data-color-scheme="dark"] .register_box{
     background-color: #282828;
 }
-:root[data-color-scheme="light"] .login_box{
+:root[data-color-scheme="light"] .register_box{
     background-color: #d0d0d0;
 }
-:root[data-color-scheme="dark"] .login_box form input{
+:root[data-color-scheme="dark"] .register_box form input{
     background-color: #282828;
 }
-:root[data-color-scheme="light"] .login_box form input{
+:root[data-color-scheme="light"] .register_box form input{
     background-color: #d0d0d0;
 }

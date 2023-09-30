@@ -1,0 +1,31 @@
+{
+    "in_this_site": "This site contains all the photos from our",
+    "trips": "trips",
+    "most_liked": "Most liked:",
+    "exposure": "Exposure:",
+    "aperture": "Aperture:",
+    "download": "Download",
+    "allphotos": "All photos:",
+    "settings":{
+        "theme": "Theme",
+        "language": "Language",
+        "account": "Account"
+    },
+    "login":{
+        "password": "Password",
+        "sign_in": "Sign In",
+        "or_sign_with": "- Or Sign in with -",
+        "dont_have_account": "Don't have an account.",
+        "sign_up": "Sign Up!"
+    },
+    "register":{
+        "password": "Password",
+        "sign_up": "Sign Up",
+        "or_sign_with": "- Or Sign up with -",
+        "have_account": "Have account. ",
+        "sign_in": "Sign In!"
+    },
+    "account":{
+        "signout": "Sign Out"
+    }
+}
